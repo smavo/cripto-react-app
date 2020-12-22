@@ -12,7 +12,7 @@ const Label = styled.label`
 
 const Select = styled.select`
     font-family: 'Jura', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     text-transform: uppercase;
     width: 100%;
     display:block;
@@ -22,15 +22,15 @@ const Select = styled.select`
     border: none;
 
     @media (max-width:900px) {
-        font-size:18px;
+        font-size:16px;
     }
 
     @media (max-width:600px) {
-        font-size:15px;
+        font-size:14px;
     }
 `;
 
-const Forms = styled.form`
+const Forms = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     column-gap: 10px;

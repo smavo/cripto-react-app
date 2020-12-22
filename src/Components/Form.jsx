@@ -2,6 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import useMoneda from '../hooks/useMoneda';
 import useCripto from '../hooks/useCripto';
+import Error from './Error';
 import axios from 'axios';
 
 const Boton = styled.input`
@@ -33,7 +34,7 @@ const Boton = styled.input`
 const Forms = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
-    column-gap: 10px;
+    column-gap: 20px;
     margin: 0 20px;
 
 
@@ -45,13 +46,19 @@ const Forms = styled.div`
     grid-template-columns: 1fr;
     }
 `
+const Formsb = styled.div`
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 10px;
+    margin: 0 20px;
+`
 
 function Form() {
 
     // state del listado de criptomonedas
     const [listacripto, guardarCriptomonedas] = useState([]);
 
-
+    const [error, guardarError] = useState(false);
 
     const monedas = [
         { codigo: 'USD', nombre: 'Dolar de Estados Unidos' },
@@ -85,20 +92,40 @@ function Form() {
         consultarAPI();
     }, []);
 
+    // cuando el usuario hace submit
+    const cotizarMoneda = e => {
+        e.preventDefault();
+
+        // validar si ambos campos estan llenos
+        if (moneda === '' || criptomoneda === '') {
+            guardarError(true);
+            return;
+        }
+
+        // pasar los datos al componente principal
+        guardarError(false);
+        //guardarMoneda(moneda);
+        //guardarCriptomoneda(criptomoneda);
+    }
+
     return (
         <Fragment>
-            <Forms>
-
+            <form onSubmit={cotizarMoneda}>
+                <Forms>
                 <SelectMonedas />
 
                 <SelectCripto />
+                </Forms>
+
+                <Formsb>
+                {error ? <Error mensaje="Todos los campos son obligatorios" /> : null}
 
                 <Boton
                     type="submit"
                     value="Calcular"
-                />
-
-            </Forms>
+                    />
+                </Formsb>
+            </form>
         </Fragment>
     )
 }
