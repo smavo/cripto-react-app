@@ -37,4 +37,4 @@ function Header({titulo}) {
     )
 }
 
-export default Header
+export default Header;

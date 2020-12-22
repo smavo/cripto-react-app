@@ -1,25 +1,41 @@
 import React from 'react';
 import Header from './Components/Header';
 import styled from '@emotion/styled';
+import Form from './Components/Form';
 
 const Contenedor = styled.div`
-  max-width: 1200px;
-  margin: 0 10px;
-  
-
-  @media (max-width:900px) {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    column-gap: 2rem;
-  }
+  max-width:1200px;
+  margin: 0 auto;
+  justify-content:center;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 10px;
 
 `;
+
+const Seccion = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+ 
+
+  @media (max-width:900px) {
+    grid-template-columns: 1fr;
+  }
+`
+
 
 function App() {
   return (
     <Contenedor>
       <Header titulo="🏦 CriptoApp 2020 💱"/>
-      <div><p>Demo</p></div>
+      <Seccion>
+        <Form />
+        <div>
+          <h2>Demo</h2>
+        </div>
+      </Seccion>
+      
     </Contenedor>
   );
 }
