@@ -30,7 +30,6 @@ const Boton = styled.input`
     @media (max-width:600px) {
     }
 `
-
 const Forms = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -53,7 +52,7 @@ const Formsb = styled.div`
     margin: 0 20px;
 `
 
-function Form() {
+function Form({guardarMoneda,  guardarCriptomoneda }) {
 
     // state del listado de criptomonedas
     const [listacripto, guardarCriptomonedas] = useState([]);
@@ -87,7 +86,7 @@ function Form() {
             guardarCriptomonedas(resultado.data.Data);
             //console.log(resultado);
             //console.log(resultado.data);
-            console.log(resultado.data.Data);
+            //console.log(resultado.data.Data);
         }
         consultarAPI();
     }, []);
@@ -104,8 +103,8 @@ function Form() {
 
         // pasar los datos al componente principal
         guardarError(false);
-        //guardarMoneda(moneda);
-        //guardarCriptomoneda(criptomoneda);
+        guardarMoneda(moneda);
+        guardarCriptomoneda(criptomoneda);
     }
 
     return (
