@@ -2,6 +2,8 @@ import React, { Fragment } from 'react'
 import styled from '@emotion/styled';
 
 const Encabezado = styled.div`
+    font-family: 'Roboto Condensed', sans-serif;
+    /*font-family: 'Nova Flat', cursive;*/
     color: white;
     text-align:center;
    

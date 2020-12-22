@@ -8,18 +8,22 @@ const Contenedor = styled.div`
   margin: 0 auto;
   justify-content:center;
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: 1fr;
   column-gap: 10px;
 
 `;
 
 const Seccion = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   column-gap: 10px;
  
 
   @media (max-width:900px) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (max-width:600px) {
     grid-template-columns: 1fr;
   }
 `
@@ -31,9 +35,9 @@ function App() {
       <Header titulo="🏦 CriptoApp 2020 💱"/>
       <Seccion>
         <Form />
-        <div>
+        {/*<div>
           <h2>Demo</h2>
-        </div>
+        </div>*/}
       </Seccion>
       
     </Contenedor>
