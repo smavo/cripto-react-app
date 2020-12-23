@@ -105,7 +105,7 @@ const Info = styled.p`
 
 function Cotizador({ resultado }) {
     if (Object.keys(resultado).length === 0) return null;
-    console.log(resultado)
+    //console.log(resultado)
 
     return (
         <Resultado>
