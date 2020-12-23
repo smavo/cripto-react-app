@@ -1,5 +1,6 @@
-import React from 'react'
+import React from 'react';
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 
 const Resultado = styled.div`
     background-color: #f5f5f5;
@@ -121,6 +122,10 @@ function Cotizador({ resultado }) {
             </Content>
         </Resultado>
     )
+}
+
+Cotizador.propTypes = {
+    resultado: PropTypes.object.isRequired
 }
 
 export default Cotizador;

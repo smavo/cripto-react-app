@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 
 const Mensaje = styled.p`
     font-family: 'Roboto Condensed', sans-serif;
@@ -22,4 +23,8 @@ function Error({mensaje}) {
     )
 }
 
-export default Error
+Error.prototype = {
+    mensaje: PropTypes.string.isRequired
+}
+
+export default Error;

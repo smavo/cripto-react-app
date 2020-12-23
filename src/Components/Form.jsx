@@ -4,6 +4,7 @@ import useMoneda from '../hooks/useMoneda';
 import useCripto from '../hooks/useCripto';
 import Error from './Error';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 const Boton = styled.input`
     font-family: 'Roboto Condensed', sans-serif;
@@ -127,6 +128,11 @@ function Form({guardarMoneda,  guardarCriptomoneda }) {
             </form>
         </Fragment>
     )
+}
+
+Form.prototype = {
+    guardarMoneda: PropTypes.func.isRequired,
+    guardarCriptomoneda: PropTypes.func.isRequired
 }
 
 export default Form;

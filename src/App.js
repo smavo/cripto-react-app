@@ -6,7 +6,6 @@ import Cotizador from './Components/Cotizador';
 import axios from 'axios';
 import Loading from './Components/Loading';
 
-
 const Contenedor = styled.div`
   max-width:1200px;
   margin: 0 auto;
@@ -75,15 +74,15 @@ const componente = (cargando) ? <Loading /> :  <Cotizador  resultado={resultado}
 
   return (
     <Contenedor>
-      <Header titulo="🏦 CriptoApp 2020 💱"/>
+      <Header titulo="💹 CriptoApp 2020 📉"/>
       <Seccion>
-        <Form 
+        <Form
           guardarMoneda={setMoneda}
           guardarCriptomoneda={setCriptomoneda}
         />
         {componente}
       </Seccion>
-      
+
     </Contenedor>
   );
 }

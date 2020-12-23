@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 
 const Label = styled.label`
     font-family: 'Roboto Condensed', sans-serif;
@@ -62,6 +63,15 @@ function useMonedas(label, stateInicial, monedas) {
 
      // Retornar state, interfaz y fn que modifica el state
     return [state, Seleccionar, actualizarState];
+}
+
+useMonedas.prototype = {
+    label: PropTypes.string.isRequired,
+    stateInicial: PropTypes.string.isRequired,
+    monedas: PropTypes.shape({
+        codigo: PropTypes.string.isRequired,
+        nombre: PropTypes.string.isRequired
+    })
 }
 
 export default useMonedas;

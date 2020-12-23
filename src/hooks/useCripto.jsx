@@ -1,5 +1,6 @@
 import React, {Fragment, useState} from 'react'
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 
 const Label = styled.label`
     font-family: 'Roboto Condensed', sans-serif;
@@ -62,6 +63,14 @@ function useCriptos(label, stateInicial, criptomendas) {
 
     // Retornar state, interfaz y fn que modifica el state
     return [state, SelectCripto, actualizarState];
+}
+
+useCriptos.prototype = {
+    label: PropTypes.string.isRequired,
+    stateInicial: PropTypes.string.isRequired,
+    criptomendas: PropTypes.shape({
+        CoinInfo: PropTypes.object.isRequired
+    })
 }
 
 export default useCriptos;
